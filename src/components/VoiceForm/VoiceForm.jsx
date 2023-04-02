@@ -6,17 +6,13 @@ import {
   FaMicrophoneSlash,
   FaTruckLoading,
 } from "react-icons/fa";
-//import { recorder } from "../../voicerecorder";
+import { recorder } from "../../voiceRecorder";
 import { fields } from "./form.json";
 import MakeForm from "./MakeFormView";
 import Help from "./Help";
 import FormDetailsModal from "./FormDetailsModal";
 import "./VoiceForm.css";
 import "antd/dist/reset.css";
-
-const SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-const recorder = new SpeechRecognition();
 
 recorder.continous = true;
 recorder.interimResults = true;
@@ -265,7 +261,7 @@ class VoiceForm extends Component {
               <Row>
                 <Col span={24}>
                   <Row>
-                    {/* <Col span={2}>
+                    <Col span={2}>
                       {!isRecording ? (
                         <FaMicrophone
                           className="recordingIcon on"
@@ -277,7 +273,7 @@ class VoiceForm extends Component {
                           onClick={() => this._stopRecording()}
                         />
                       )}
-                    </Col> */}
+                    </Col>
                     <Col span={8} />
                     <Col span={14} className="align-right">
                       {loading && (
